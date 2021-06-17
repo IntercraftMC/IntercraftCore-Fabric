@@ -6,11 +6,11 @@
   "name": "Intercraft Core",
   "description": "Core mod for Intercraft modpack for 1.17+.",
   "authors": [
-    "Me!"
+    "simon_kungen"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "sources": "https://github.com/IntercraftMC/IntercraftCore-Fabric"
   },
 
   "license": "CC0-1.0",
@@ -34,8 +34,5 @@
     "fabric": "*",
     "minecraft": "1.17.x",
     "java": ">=16"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

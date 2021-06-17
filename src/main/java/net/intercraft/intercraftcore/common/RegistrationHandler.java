@@ -23,8 +23,6 @@ public class RegistrationHandler
      */
     public static void register()
     {
-
-
         Blocks.initBlocks();
         if (IntercraftCore.LOGGING)
             System.out.println(String.format("Preparing to register %s blocks + %s block items.",blocks.size(),blockItems.size()));
@@ -35,12 +33,9 @@ public class RegistrationHandler
 
         Items.initItems();
         if (IntercraftCore.LOGGING)
-            System.out.println("Preparing to register "+(items.size()+blockItems.size())+" items.");
+            System.out.println("Preparing to register "+items.size()+" items.");
         for (ModdedItem item : items)
             Registry.register(Registry.ITEM, new Identifier(Reference.MODID,item.getRegistryName()),item);
-
-
-        //ColorHandler.register();
 
     }
 }

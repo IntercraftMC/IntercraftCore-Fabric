@@ -84,7 +84,6 @@ public class Items
     private static void register(ItemElementGroup...itemElementGroups)
     {
         for (ItemElementGroup eg : itemElementGroups) {
-            // TODO Color them.
             registerColor(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
             register(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
 

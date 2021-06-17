@@ -30,26 +30,14 @@ public class Element
     private final int colorRefined, colorUnrefined;
 
 
-
     public Element(String name, String symbol, String[] composition, int colorRefined, int colorUnrefined, int forms) {
         this.name = name;
         this.symbol = symbol;
         this.composition = composition;
         this.colorRefined = colorRefined;
         this.colorUnrefined = colorUnrefined;
-        //forms &= ~excludeForms;
         this.forms = forms;
     }
-
-    /**
-     * Instantiate a element and automatically exclude forms from melting- and boiling point (k).
-     */
-    /*public Element(float meltingPoint, float boilingPoint)
-    {
-
-    }*/
-
-
 
     /**
      * Name of the element.
