@@ -1,10 +1,15 @@
 package net.intercraft.intercraftcore.client;
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 
 @Environment(EnvType.CLIENT)
-public class ClientHandler
+public class ClientHandler implements ClientModInitializer
 {
-
+    @Override
+    public void onInitializeClient()
+    {
+        ColorHandler.register();
+    }
 }

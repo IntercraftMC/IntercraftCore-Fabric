@@ -1,6 +1,7 @@
 package net.intercraft.intercraftcore.common;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.intercraft.intercraftcore.client.ColorHandler;
 import net.intercraft.intercraftcore.common.element.Elements;
 import net.intercraft.intercraftcore.common.element.ItemElementGroup;
 import net.intercraft.intercraftcore.common.item.ElementItem;
@@ -68,6 +69,14 @@ public class Items
         }
     }
 
+    private static void registerColor(ModdedItem...items)
+    {
+        for (ModdedItem item : items) {
+            if (item != null)
+                ColorHandler.items.add(item);
+        }
+    }
+
     /**
      * Register element group(s) of items.
      * @param itemElementGroups Group(s) of items to register.
@@ -76,6 +85,7 @@ public class Items
     {
         for (ItemElementGroup eg : itemElementGroups) {
             // TODO Color them.
+            registerColor(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
             register(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
 
         }

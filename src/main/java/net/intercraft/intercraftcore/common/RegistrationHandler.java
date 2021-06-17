@@ -1,6 +1,7 @@
 package net.intercraft.intercraftcore.common;
 
 import net.intercraft.intercraftcore.IntercraftCore;
+import net.intercraft.intercraftcore.client.ColorHandler;
 import net.intercraft.intercraftcore.common.block.ModdedBlock;
 import net.intercraft.intercraftcore.common.item.ModdedBlockItem;
 import net.intercraft.intercraftcore.common.item.ModdedItem;
@@ -37,6 +38,9 @@ public class RegistrationHandler
             System.out.println("Preparing to register "+(items.size()+blockItems.size())+" items.");
         for (ModdedItem item : items)
             Registry.register(Registry.ITEM, new Identifier(Reference.MODID,item.getRegistryName()),item);
+
+
+        //ColorHandler.register();
 
     }
 }

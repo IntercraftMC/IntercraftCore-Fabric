@@ -20,6 +20,9 @@
   "entrypoints": {
     "main": [
       "net.intercraft.intercraftcore.IntercraftCore"
+    ],
+    "client": [
+      "net.intercraft.intercraftcore.client.ClientHandler"
     ]
   },
   "mixins": [
