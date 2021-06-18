@@ -34,6 +34,11 @@ public class ItemElementGroup extends ObjectGroup<ElementItem>
         VIAL_GAS    = createObject(c, Element.RAW, "vial_gas");
     }
 
+    public Element getElement()
+    {
+        return element;
+    }
+
     /**
      * Create new instance from constructor.
      * @param constructor Item constructor.

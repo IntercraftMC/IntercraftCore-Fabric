@@ -69,13 +69,13 @@ public class Items
         }
     }
 
-    private static void registerColor(ModdedItem...items)
+    /*private static void registerColor(ModdedItem...items)
     {
         for (ModdedItem item : items) {
             if (item != null)
                 ColorHandler.items.add(item);
         }
-    }
+    }*/
 
     /**
      * Register element group(s) of items.
@@ -84,8 +84,13 @@ public class Items
     private static void register(ItemElementGroup...itemElementGroups)
     {
         for (ItemElementGroup eg : itemElementGroups) {
-            registerColor(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
+            //registerColor(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
             register(eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
+
+            //ColorHandler.colorStaticItem(eg.getElement().getColorRefined(), ColorHandler.LAYERS[0] | ColorHandler.LAYERS[1],
+            ColorHandler.colorStaticItem(eg.getElement().getColorRefined(),
+                    eg.INGOT, eg.NUGGET, eg.DUST, eg.DUST_SMALL, eg.PLATE, eg.GEAR, eg.ROD, eg.RAW);
+
 
         }
     }
