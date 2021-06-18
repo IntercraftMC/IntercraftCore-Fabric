@@ -29,6 +29,11 @@ public class BlockElementGroup extends ObjectGroup<ElementBlock>
         RAW_BLOCK = createObject(c, Element.RAW_BLOCK, "raw_block");
     }
 
+    public Element getElement()
+    {
+        return element;
+    }
+
     /**
      * Create new instance from constructor.
      * @param constructor Item constructor.

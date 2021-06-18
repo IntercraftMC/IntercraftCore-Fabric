@@ -1,6 +1,7 @@
 package net.intercraft.intercraftcore.common.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.intercraft.intercraftcore.common.ItemGroups;
 import net.intercraft.intercraftcore.common.element.Element;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemGroup;
@@ -29,7 +30,7 @@ public class ElementItem extends ModdedItem
      */
     public ElementItem(Element element, String suffix)
     {
-        super(new FabricItemSettings().group(ItemGroup.MISC));
+        super(new FabricItemSettings().group(ItemGroups.RESOURCES));
         this.element = element;
         this.suffix = suffix;
     }

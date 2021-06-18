@@ -2,7 +2,7 @@ package net.intercraft.intercraftcore.common.element;
 
 import net.intercraft.intercraftcore.common.ObjectGroup;
 import net.intercraft.intercraftcore.common.item.ElementItem;
-import net.intercraft.intercraftcore.common.item.ModdedItem;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
@@ -25,7 +25,7 @@ public class ItemElementGroup extends ObjectGroup<ElementItem>
         INGOT       = createObject(c, Element.INGOT, "ingot");
         NUGGET      = createObject(c, Element.NUGGET, "nugget");
         DUST        = createObject(c, Element.DUST, "dust");
-        DUST_SMALL  = createObject(c, Element.DUST_SMALL, "dustsmall");
+        DUST_SMALL  = createObject(c, Element.DUST_SMALL, "dust_small");
         PLATE       = createObject(c, Element.PLATE, "plate");
         GEAR        = createObject(c, Element.GEAR, "gear");
         ROD         = createObject(c, Element.ROD, "rod");

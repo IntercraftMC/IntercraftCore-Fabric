@@ -1,19 +1,18 @@
 package net.intercraft.intercraftcore.common;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.intercraft.intercraftcore.client.ColorHandler;
 import net.intercraft.intercraftcore.common.block.ElementBlock;
 import net.intercraft.intercraftcore.common.block.ModdedBlock;
 import net.intercraft.intercraftcore.common.block.TestBlock;
 import net.intercraft.intercraftcore.common.element.BlockElementGroup;
 import net.intercraft.intercraftcore.common.element.Elements;
-import net.intercraft.intercraftcore.common.element.ItemElementGroup;
-import net.intercraft.intercraftcore.common.item.ElementItem;
 import net.intercraft.intercraftcore.common.item.ModdedBlockItem;
 import net.minecraft.item.ItemGroup;
 
 public class Blocks
 {
-    private static final FabricItemSettings itemGroup_MISC = new FabricItemSettings().group(ItemGroup.MISC);// Just put this here because I'm lazy.
+    private static final FabricItemSettings itemGroup_RESOURCES = new FabricItemSettings().group(ItemGroups.RESOURCES);// Just put this here because I'm lazy.
 
 
     public static final ModdedBlock TEST;
@@ -56,11 +55,11 @@ public class Blocks
 
     protected static void initBlocks()
     {
-        registerBlockItem(itemGroup_MISC,TEST);
+        registerBlockItem(itemGroup_RESOURCES,TEST);
 
-        register(itemGroup_MISC, ALUMINIUM, COPPER, GOLD, IRIDIUM, IRON, LEAD, LITHIUM, MERCURY, NICKEL, SILVER, THORIUM, TIN, TITANIUM, TUNGSTEN, URANIUM, ZINC);
-        register(itemGroup_MISC, CARBON, SILICON);
-        register(itemGroup_MISC, BRASS, BRONZE, ELECTRUM, STEEL);
+        register(itemGroup_RESOURCES, ALUMINIUM, COPPER, GOLD, IRIDIUM, IRON, LEAD, LITHIUM, MERCURY, NICKEL, SILVER, THORIUM, TIN, TITANIUM, TUNGSTEN, URANIUM, ZINC);
+        register(itemGroup_RESOURCES, CARBON, SILICON);
+        register(itemGroup_RESOURCES, BRASS, BRONZE, ELECTRUM, STEEL);
     }
 
     /**
@@ -81,14 +80,11 @@ public class Blocks
 
             registerBlockItem(settings,eg.BLOCK,eg.FRAME,eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
 
-            /*for (ModdedBlock block : new ModdedBlock[] {eg.BLOCK,eg.FRAME,eg.BLOCK,eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK}) {
-                if (block != null) {
-
-
-                }
-            }*/
-
-
+            // Applying colour handler.
+            ColorHandler.colorStaticBlock(eg.getElement().getColorRefined(),
+                    eg.BLOCK,eg.FRAME);
+            ColorHandler.colorStaticBlock(eg.getElement().getColorUnrefined(), ColorHandler.LAYERS[1],
+                    eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
         }
     }
 

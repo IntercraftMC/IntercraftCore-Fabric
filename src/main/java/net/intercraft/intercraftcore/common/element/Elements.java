@@ -72,7 +72,7 @@ public class Elements
                     .colorUnrefined(0xdaf7f8)
                     .create(),
             THORIUM = new ElementFactory("thorium", "Th")
-                    .excludeForms(NONSOLID)
+                    .excludeForms(NONSOLID | GEAR)
                     .colorRefined(0x333)
                     .colorUnrefined(0x444818)
                     .create(),
@@ -91,12 +91,12 @@ public class Elements
                     .colorUnrefined(0x5e5454)
                     .create(),
             URANIUM = new ElementFactory("uranium", "U")
-                    .excludeForms(NONSOLID)
+                    .excludeForms(NONSOLID | GEAR)
                     .colorRefined(0x077a07)
                     .colorUnrefined(0xaeb559)
                     .create(),
             ZINC = new ElementFactory("zinc", "Zn")
-                    .excludeForms(NONSOLID)
+                    .excludeForms(NONSOLID | GEAR)
                     .colorRefined(0xaecfd8)
                     .colorUnrefined(0xaeb5ca)
                     .create();
@@ -106,12 +106,12 @@ public class Elements
      */
     public static final Element
             CARBON = new ElementFactory("carbon", "C")
-                    .excludeForms(VIAL_GAS)
+                    .excludeForms(VIAL_GAS | GEAR)
                     .colorRefined(0x000000)
                     .colorUnrefined(0x000000)
                     .create(),
             SILICON = new ElementFactory("silicon", "Si")
-                    .excludeForms(VIAL_GAS)
+                    .excludeForms(VIAL_GAS | GEAR)
                     .colorRefined(0x000000)
                     .colorUnrefined(0x000000)
                     .create();
