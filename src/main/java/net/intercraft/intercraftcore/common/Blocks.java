@@ -1,5 +1,6 @@
 package net.intercraft.intercraftcore.common;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.intercraft.intercraftcore.client.ColorHandler;
 import net.intercraft.intercraftcore.common.block.ElementBlock;
@@ -8,6 +9,7 @@ import net.intercraft.intercraftcore.common.block.TestBlock;
 import net.intercraft.intercraftcore.common.element.BlockElementGroup;
 import net.intercraft.intercraftcore.common.element.Elements;
 import net.intercraft.intercraftcore.common.item.ModdedBlockItem;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.ItemGroup;
 
 public class Blocks
@@ -85,6 +87,13 @@ public class Blocks
                     eg.BLOCK,eg.FRAME);
             ColorHandler.colorStaticBlock(eg.getElement().getColorUnrefined(), ColorHandler.LAYERS[1],
                     eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
+
+            if (eg.ORE_STONE != null) {
+                BlockRenderLayerMap.INSTANCE.putBlock(eg.ORE_STONE, RenderLayer.getCutout());
+            }
+            if (eg.ORE_DEEPSLATE != null) {
+                BlockRenderLayerMap.INSTANCE.putBlock(eg.ORE_DEEPSLATE, RenderLayer.getCutout());
+            }
         }
     }
 
