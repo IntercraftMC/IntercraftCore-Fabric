@@ -6,7 +6,8 @@
   "name": "Intercraft Core",
   "description": "Core mod for Intercraft modpack for 1.17+.",
   "authors": [
-    "simon_kungen"
+    "simon_kungen",
+    "SirDavidLudwig"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
@@ -32,6 +33,7 @@
   "depends": {
     "fabricloader": ">=0.11.3",
     "fabric": "*",
+    "trinkets": ">=3.0.0",
     "minecraft": "1.17.x",
     "java": ">=16"
   }
