@@ -5,6 +5,7 @@ import net.minecraft.block.Material;
 public class Element
 {
     public static final short
+            // Items.
             INGOT         = 1,
             NUGGET        = 1<<1,
             DUST          = 1<<2,
@@ -15,7 +16,7 @@ public class Element
             RAW           = 1<<7,
             VIAL_LIQUID   = 1<<8,
             VIAL_GAS      = 1<<9,
-
+            // Blocks.
             BLOCK         = 1<<10,
             FRAME         = 1<<11,
             ORE_STONE     = 1<<12,
@@ -67,14 +68,14 @@ public class Element
         return colorUnrefined;
     }
 
-    public String toStringComposition()
+    /*public String toStringComposition()
     {
-        String t = "";
+        StringBuilder t = new StringBuilder();
         for (String i : composition) {
-            t += i;
+            t.append(i);
         }
-        return t;
-    }
+        return t.toString();
+    }*/
 
     /**
      * Material type. Override to change.

@@ -1,6 +1,9 @@
 package net.intercraft.intercraftcore.common.item;
 
-public class TestItem extends ModdedItem
+import net.intercraft.intercraftcore.common.IRegistryName;
+import net.minecraft.item.Item;
+
+public class TestItem extends Item implements IRegistryName
 {
     public String getRegistryName()
     {

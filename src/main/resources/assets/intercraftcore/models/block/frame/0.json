@@ -1,0 +1,21 @@
+{
+  "parent": "minecraft:block/block",
+  "textures": {
+    "side": "intercraftcore:block/frame/0_side",
+    "end": "intercraftcore:block/frame/0_end",
+    "particle": "#end"
+  },
+  "elements": [
+    { "from": [0,0,0],
+      "to": [16,16,16],
+      "faces": {
+        "down":  { "texture": "#end", "tintindex": 1 },
+        "up":    { "texture": "#end", "tintindex": 1 },
+        "north": { "texture": "#face", "tintindex": 1 },
+        "south": { "texture": "#face", "tintindex": 1 },
+        "west":  { "texture": "#face", "tintindex": 1 },
+        "east":  { "texture": "#face", "tintindex": 1 }
+      }
+    }
+  ]
+}

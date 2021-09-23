@@ -1,11 +1,9 @@
 package net.intercraft.intercraftcore.common;
 
 import net.intercraft.intercraftcore.IntercraftCore;
-import net.intercraft.intercraftcore.client.ColorHandler;
-import net.intercraft.intercraftcore.common.block.ModdedBlock;
-import net.intercraft.intercraftcore.common.item.ModdedBlockItem;
-import net.intercraft.intercraftcore.common.item.ModdedItem;
-import net.intercraft.intercraftcore.Reference;
+import net.minecraft.block.Block;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -14,9 +12,9 @@ import java.util.List;
 
 public class RegistrationHandler
 {
-    protected static final List<ModdedBlock> blocks = new LinkedList<>();
-    protected static final List<ModdedItem> items = new LinkedList<>();
-    protected static final List<ModdedBlockItem> blockItems = new LinkedList<>();
+    protected static final List<Block> blocks = new LinkedList<>();
+    protected static final List<Item> items = new LinkedList<>();
+    protected static final List<BlockItem> blockItems = new LinkedList<>();
 
     /**
      * Registers all objects. Needs to be in this order to prevent race condition.
@@ -26,16 +24,30 @@ public class RegistrationHandler
         Blocks.initBlocks();
         if (IntercraftCore.LOGGING)
             System.out.println(String.format("Preparing to register %s blocks + %s block items.",blocks.size(),blockItems.size()));
-        for (ModdedBlock block : blocks)
-            Registry.register(Registry.BLOCK, new Identifier(Reference.MODID,block.getRegistryName()),block);
-        for (ModdedBlockItem item : blockItems)
-            Registry.register(Registry.ITEM, new Identifier(Reference.MODID,item.getRegistryName()),item);
+
+        for (Block block : blocks) {
+            if (block instanceof IRegistryName)
+                Registry.register(Registry.BLOCK, new Identifier(IntercraftCore.MODID, ((IRegistryName) block).getRegistryName()), block);
+            else if (IntercraftCore.LOGGING)
+                System.out.println("Block didn't have a registry name!");
+        }
+
+        for (BlockItem item : blockItems) {
+            if (item instanceof IRegistryName)
+                Registry.register(Registry.ITEM, new Identifier(IntercraftCore.MODID, ((IRegistryName) item).getRegistryName()), item);
+            else if (IntercraftCore.LOGGING)
+                System.out.println("BlockItem didn't have a registry name!");
+        }
 
         Items.initItems();
         if (IntercraftCore.LOGGING)
             System.out.println("Preparing to register "+items.size()+" items.");
-        for (ModdedItem item : items)
-            Registry.register(Registry.ITEM, new Identifier(Reference.MODID,item.getRegistryName()),item);
+        for (Item item : items) {
+            if (item instanceof IRegistryName)
+                Registry.register(Registry.ITEM, new Identifier(IntercraftCore.MODID, ((IRegistryName) item).getRegistryName()), item);
+            else if (IntercraftCore.LOGGING)
+                System.out.println("Item didn't have a registry name!");
+        }
 
     }
 }

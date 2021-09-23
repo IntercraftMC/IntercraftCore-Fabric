@@ -1,9 +1,11 @@
 package net.intercraft.intercraftcore.common.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.intercraft.intercraftcore.common.IRegistryName;
 import net.intercraft.intercraftcore.common.ItemGroups;
 import net.intercraft.intercraftcore.common.element.Element;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.LiteralText;
@@ -13,8 +15,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class ElementItem extends ModdedItem
+public class ElementItem extends Item implements IRegistryName
 {
+    private static final FabricItemSettings settings = new FabricItemSettings().group(ItemGroups.RESOURCES);
+
     private final Element element;
     private final String suffix;
 
@@ -30,14 +34,9 @@ public class ElementItem extends ModdedItem
      */
     public ElementItem(Element element, String suffix)
     {
-        super(new FabricItemSettings().group(ItemGroups.RESOURCES));
+        super(settings);
         this.element = element;
         this.suffix = suffix;
-    }
-
-    public int getColorRefined()
-    {
-        return element.getColorRefined();
     }
 
     @Override

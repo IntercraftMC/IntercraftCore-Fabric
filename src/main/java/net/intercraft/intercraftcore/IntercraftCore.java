@@ -6,7 +6,14 @@ import net.intercraft.intercraftcore.common.RegistrationHandler;
 
 public class IntercraftCore implements ModInitializer
 {
-	public static boolean LOGGING = true;
+	public static final String
+			MODID = "intercraftcore",
+			NAME = "Intercraft Core",
+			VERSION = "a0.1";
+
+	public static boolean
+			LOGGING = true,
+			DEBUG = true;
 
 	@Override
 	public void onInitialize()
@@ -15,14 +22,12 @@ public class IntercraftCore implements ModInitializer
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		System.out.println("Initiating '"+Reference.MODID+"'");
-		float start = 1.1f;
+		System.out.println("Initiating '"+IntercraftCore.MODID+"'");
 		// TODO Create/Read configs.
 
 		// Register all blocks, items, entities, etc.
 		RegistrationHandler.register();
 
 
-		System.out.println("Finished init in "+start+" ms.");
 	}
 }

@@ -1,10 +1,12 @@
 package net.intercraft.intercraftcore.common.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.intercraft.intercraftcore.common.IRegistryName;
 import net.intercraft.intercraftcore.common.element.Element;
+import net.minecraft.block.Block;
 
 
-public class ElementBlock extends ModdedBlock
+public class ElementBlock extends Block implements IRegistryName
 {
     private final Element element;
     private final String suffix;

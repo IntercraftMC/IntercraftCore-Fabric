@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "intercraftcore:block/deepslate_ore"
+      "model": "intercraftcore:block/deepslate_ore/0"
     }
   }
 }

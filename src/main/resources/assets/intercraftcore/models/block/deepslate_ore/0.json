@@ -1,5 +1,5 @@
 {
-  "parent": "intercraftcore:block/ore",
+  "parent": "intercraftcore:block/ore/0",
   "textures": {
     "base": "minecraft:block/deepslate"
   }

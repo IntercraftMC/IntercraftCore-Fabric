@@ -2,7 +2,7 @@
   "parent": "minecraft:block/block",
   "textures": {
     "base": "minecraft:block/stone",
-    "ore": "intercraftcore:block/resources/ore/1",
+    "ore": "intercraftcore:block/ore/0",
     "particle": "#base"
   },
   "elements": [

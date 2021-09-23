@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "intercraftcore:block/ore"
+      "model": "intercraftcore:block/ore/0"
     }
   }
 }

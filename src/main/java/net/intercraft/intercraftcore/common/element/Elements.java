@@ -12,10 +12,10 @@ public class Elements
      * Groupings of forms.
      */
     private static final short
-            ORES = ORE_STONE | ORE_DEEPSLATE | RAW | RAW_BLOCK,// Ores and its produce.
-            NONSOLID = VIAL_GAS | VIAL_LIQUID,// Non-solid forms.
-            UNSTABLE = GEAR | BLOCK | FRAME | PLATE,// Elements too unstable/unsuited to make components out of due to strength or reactivity.
-            OVERLAP_VANILLA = INGOT | NUGGET | BLOCK | ORES;// To prevent duplication with vanilla elements.
+            ORES = ORE_STONE | ORE_DEEPSLATE | RAW | RAW_BLOCK,// Ores and its produce
+            NONSOLID = VIAL_GAS | VIAL_LIQUID,// Solid at room temperature
+            UNSTABLE = GEAR | BLOCK | FRAME | PLATE,// Elements too unstable/unsuited to make components out of due to strength or reactivity
+            OVERLAP_VANILLA = INGOT | NUGGET | BLOCK | ORES;// Vanilla counterparts
 
 
     /**
@@ -106,7 +106,7 @@ public class Elements
      */
     public static final Element
             CARBON = new ElementFactory("carbon", "C")
-                    .excludeForms(VIAL_GAS | GEAR)
+                    .excludeForms(ORES | VIAL_GAS | GEAR)
                     .colorRefined(0x000000)
                     .colorUnrefined(0x000000)
                     .create(),
