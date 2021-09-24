@@ -5,7 +5,7 @@ import net.intercraft.intercraftcore.common.item.ElementItem;
 
 import java.lang.reflect.Constructor;
 
-public class ItemElementElementGroup extends ObjectElementGroup<ElementItem>
+public class ItemElementGroup extends ObjectElementGroup<ElementItem>
 {
     public final ElementItem INGOT, NUGGET, DUST, DUST_SMALL, PLATE, GEAR, ROD, RAW, VIAL_LIQUID, VIAL_GAS;
     //public final ModdedBlockItem BLOCK, FRAME, ORE_STONE, ORE_DEEPSLATE;
@@ -15,7 +15,7 @@ public class ItemElementElementGroup extends ObjectElementGroup<ElementItem>
      * @param element Element config.
      * @param clazz Item Class to create items from.
      */
-    public <T extends ElementItem> ItemElementElementGroup(Element element, Class<T> clazz)
+    public <T extends ElementItem> ItemElementGroup(Element element, Class<T> clazz)
     {
         super(element);
         final Constructor<?> c = createConstructor(clazz);

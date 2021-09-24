@@ -9,14 +9,13 @@ import static net.intercraft.intercraftcore.common.element.Element.*;
 public class Elements
 {
     /**
-     * Groupings of forms.
+     * Groupings of forms
      */
     private static final short
             ORES = ORE_STONE | ORE_DEEPSLATE | RAW | RAW_BLOCK,// Ores and its produce
             NONSOLID = VIAL_GAS | VIAL_LIQUID,// Solid at room temperature
             UNSTABLE = GEAR | BLOCK | FRAME | PLATE,// Elements too unstable/unsuited to make components out of due to strength or reactivity
             OVERLAP_VANILLA = INGOT | NUGGET | BLOCK | ORES;// Vanilla counterparts
-
 
     /**
      * Metals

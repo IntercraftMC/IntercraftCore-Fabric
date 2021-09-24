@@ -11,7 +11,8 @@
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/IntercraftMC/IntercraftCore-Fabric"
+    "sources": "https://github.com/IntercraftMC/IntercraftCore-Fabric",
+    "issues": "https://github.com/IntercraftMC/IntercraftCore-Fabric/issues"
   },
 
   "license": "CC0-1.0",

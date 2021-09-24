@@ -5,7 +5,7 @@ import net.intercraft.intercraftcore.common.block.ElementBlock;
 
 import java.lang.reflect.Constructor;
 
-public class BlockElementElementGroup extends ObjectElementGroup<ElementBlock>
+public class BlockElementGroup extends ObjectElementGroup<ElementBlock>
 {
     public final ElementBlock BLOCK, FRAME, ORE_STONE, ORE_DEEPSLATE, RAW_BLOCK;
 
@@ -14,7 +14,7 @@ public class BlockElementElementGroup extends ObjectElementGroup<ElementBlock>
      * @param element Element config.
      * @param clazz Block Class to create blocks from.
      */
-    public <T extends ElementBlock> BlockElementElementGroup(Element element, Class<T> clazz)
+    public <T extends ElementBlock> BlockElementGroup(Element element, Class<T> clazz)
     {
         super(element);
         final Constructor<?> c = createConstructor(clazz);
