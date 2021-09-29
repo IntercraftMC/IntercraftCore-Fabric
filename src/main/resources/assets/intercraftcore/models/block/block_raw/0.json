@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/block",
   "textures": {
-    "base": "intercraftcore:block/ore_stone/0",
-    "ore": "intercraftcore:block/ore/0",
+    "base": "intercraftcore:block/block_raw/0_base",
+    "layer": "intercraftcore:block/block_raw/0_layer",
     "particle": "#base"
   },
   "elements": [
@@ -20,12 +20,12 @@
     { "from": [ 0, 0, 0 ],
       "to": [ 16, 16, 16 ],
       "faces": {
-        "down":  { "texture": "#ore", "tintindex": 1, "cullface": "down" },
-        "up":    { "texture": "#ore", "tintindex": 1, "cullface": "up" },
-        "north": { "texture": "#ore", "tintindex": 1, "cullface": "north" },
-        "south": { "texture": "#ore", "tintindex": 1, "cullface": "south" },
-        "west":  { "texture": "#ore", "tintindex": 1, "cullface": "west" },
-        "east":  { "texture": "#ore", "tintindex": 1, "cullface": "east" }
+        "down":  { "texture": "#layer", "tintindex": 1, "cullface": "down" },
+        "up":    { "texture": "#layer", "tintindex": 1, "cullface": "up" },
+        "north": { "texture": "#layer", "tintindex": 1, "cullface": "north" },
+        "south": { "texture": "#layer", "tintindex": 1, "cullface": "south" },
+        "west":  { "texture": "#layer", "tintindex": 1, "cullface": "west" },
+        "east":  { "texture": "#layer", "tintindex": 1, "cullface": "east" }
       }
     }
   ]

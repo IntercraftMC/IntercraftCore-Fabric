@@ -1,0 +1,20 @@
+{
+  "textures": {
+    "tap": "minecraft:block/iron_block",
+    "particle": "#tap"
+  },
+  "elements": [
+    {
+      "name": "Cube",
+      "from": [ 7, 9, 0 ],
+      "to": [ 9, 10, 4 ],
+      "faces": {
+        "east": { "texture": "#tap" },
+        "south": { "texture": "#tap" },
+        "west": { "texture": "#tap" },
+        "up": { "texture": "#tap" },
+        "down": { "texture": "#tap" }
+      }
+    }
+  ]
+}

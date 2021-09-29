@@ -5,7 +5,7 @@ import static net.intercraft.intercraftcore.common.element.Element.*;
 public class ElementFactory
 {
 
-    private int forms = INGOT | NUGGET | DUST | DUST_SMALL | PLATE | GEAR | ROD | RAW | VIAL_LIQUID | VIAL_GAS | BLOCK | FRAME | ORE_STONE | ORE_DEEPSLATE | RAW_BLOCK;;
+    private int forms = INGOT | NUGGET | DUST | DUST_SMALL | PLATE | GEAR | ROD | RAW | VIAL_LIQUID | VIAL_GAS | BLOCK | ORE_STONE | ORE_DEEPSLATE | RAW_BLOCK;
     private final String name, symbol;
     private String[] composition;
     private int colorRefined, colorUnrefined;

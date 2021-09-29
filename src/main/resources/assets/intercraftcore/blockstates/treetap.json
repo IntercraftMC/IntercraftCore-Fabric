@@ -1,0 +1,54 @@
+{
+  "multipart": [
+    {
+      "when": {
+        "facing": "north"
+      },
+      "apply": { "model": "intercraftcore:block/treetap/tap" }
+    },
+    {
+      "when": {
+        "facing": "south"
+      },
+      "apply": { "model": "intercraftcore:block/treetap/tap", "y": 180 }
+    },
+    {
+      "when": {
+        "facing": "west"
+      },
+      "apply": { "model": "intercraftcore:block/treetap/tap", "y": 270 }
+    },
+    {
+      "when": {
+        "facing": "east"
+      },
+      "apply": { "model": "intercraftcore:block/treetap/tap", "y": 90 }
+    },
+
+
+    {
+      "when": {
+        "facing": "north", "bucket": true
+      },
+      "apply": { "model": "intercraftcore:block/treetap/bucket" }
+    },
+    {
+      "when": {
+        "facing": "south", "bucket": true
+      },
+      "apply": { "model": "intercraftcore:block/treetap/bucket", "y": 180 }
+    },
+    {
+      "when": {
+        "facing": "west", "bucket": true
+      },
+      "apply": { "model": "intercraftcore:block/treetap/bucket", "y": 270 }
+    },
+    {
+      "when": {
+        "facing": "east", "bucket": true
+      },
+      "apply": { "model": "intercraftcore:block/treetap/bucket", "y": 90 }
+    }
+  ]
+}

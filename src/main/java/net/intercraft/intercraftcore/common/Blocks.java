@@ -5,12 +5,14 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.intercraft.intercraftcore.client.ColorHandler;
 import net.intercraft.intercraftcore.common.block.ElementBlock;
 import net.intercraft.intercraftcore.common.block.TestBlock;
+import net.intercraft.intercraftcore.common.block.TreeTap;
 import net.intercraft.intercraftcore.common.element.BlockElementGroup;
 import net.intercraft.intercraftcore.common.element.Elements;
 import net.intercraft.intercraftcore.common.item.ModdedBlockItem;
 import net.minecraft.block.Block;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemGroup;
 
 import java.util.LinkedList;
 
@@ -22,10 +24,13 @@ public class Blocks
 
     public static final LinkedList<Block> cutoutModels = new LinkedList<>();
 
-    private static final FabricItemSettings itemGroup_RESOURCES = new FabricItemSettings().group(ItemGroups.RESOURCES);// Just put this here because I'm lazy.
+    private static final FabricItemSettings// Just put this here because I'm lazy.
+            itemGroup_RESOURCES = new FabricItemSettings().group(ItemGroups.RESOURCES),
+            itemGroup_TOOLS = new FabricItemSettings().group(ItemGroup.TOOLS);
 
 
     public static final Block TEST;
+    public static final Block TREETAP;
 
     public static final BlockElementGroup ALUMINIUM, COPPER, GOLD, IRIDIUM, IRON, LEAD, LITHIUM, MERCURY, NICKEL, SILVER, THORIUM, TIN, TITANIUM, TUNGSTEN, URANIUM, ZINC;
     public static final BlockElementGroup CARBON, SILICON;
@@ -34,6 +39,7 @@ public class Blocks
 
     static {
         TEST = new TestBlock();
+        TREETAP = new TreeTap();
 
 
         ALUMINIUM = new BlockElementGroup(Elements.ALUMINIUM, ElementBlock.class);
@@ -65,6 +71,8 @@ public class Blocks
     protected static void initBlocks()
     {
         registerBlockAndItem(itemGroup_RESOURCES,TEST);
+        registerBlockAndItem(itemGroup_TOOLS,TREETAP);
+        cutoutModels.add(TREETAP);
 
         register(itemGroup_RESOURCES, ALUMINIUM, COPPER, GOLD, IRIDIUM, IRON, LEAD, LITHIUM, MERCURY, NICKEL, SILVER, THORIUM, TIN, TITANIUM, TUNGSTEN, URANIUM, ZINC);
         register(itemGroup_RESOURCES, CARBON, SILICON);
@@ -95,26 +103,26 @@ public class Blocks
     {
         for (BlockElementGroup eg : blockElementGroups) {
 
-            register(eg.BLOCK,eg.FRAME,eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
+            register(eg.BLOCK,eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
 
             // Applying color handler.
             ColorHandler.colorStaticBlock(eg.getElement().getColorRefined(),-1,
-                    eg.BLOCK,eg.FRAME);
+                    eg.BLOCK);
             ColorHandler.colorStaticBlock(eg.getElement().getColorUnrefined(), ColorHandler.LAYERS[1],
                     eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
 
             // Create ItemBlocks.
             registerColoredBlockItem(settings,eg.getElement().getColorRefined(),-1,
-                    eg.BLOCK,eg.FRAME);
+                    eg.BLOCK);
             registerColoredBlockItem(settings,eg.getElement().getColorUnrefined(),ColorHandler.LAYERS[1],
                     eg.ORE_STONE,eg.ORE_DEEPSLATE,eg.RAW_BLOCK);
 
-            if (eg.ORE_STONE != null) {
+            if (eg.RAW_BLOCK != null)
+                cutoutModels.add(eg.RAW_BLOCK);
+            if (eg.ORE_STONE != null)
                 cutoutModels.add(eg.ORE_STONE);
-            }
-            if (eg.ORE_DEEPSLATE != null) {
+            if (eg.ORE_DEEPSLATE != null)
                 cutoutModels.add(eg.ORE_DEEPSLATE);
-            }
         }
     }
 

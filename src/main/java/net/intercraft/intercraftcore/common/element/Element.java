@@ -18,10 +18,9 @@ public class Element
             VIAL_GAS      = 1<<9,
             // Blocks.
             BLOCK         = 1<<10,
-            FRAME         = 1<<11,
-            ORE_STONE     = 1<<12,
-            ORE_DEEPSLATE = 1<<13,
-            RAW_BLOCK     = 1<<14;
+            ORE_STONE     = 1<<11,
+            ORE_DEEPSLATE = 1<<12,
+            RAW_BLOCK     = 1<<13;
 
 
     public final int forms;

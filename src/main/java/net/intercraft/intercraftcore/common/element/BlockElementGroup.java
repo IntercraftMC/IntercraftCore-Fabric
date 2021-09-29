@@ -7,7 +7,7 @@ import java.lang.reflect.Constructor;
 
 public class BlockElementGroup extends ObjectElementGroup<ElementBlock>
 {
-    public final ElementBlock BLOCK, FRAME, ORE_STONE, ORE_DEEPSLATE, RAW_BLOCK;
+    public final ElementBlock BLOCK, ORE_STONE, ORE_DEEPSLATE, RAW_BLOCK;
 
     /**
      * Create blocks from class T.
@@ -20,7 +20,7 @@ public class BlockElementGroup extends ObjectElementGroup<ElementBlock>
         final Constructor<?> c = createConstructor(clazz);
 
         BLOCK = createObject(c, Element.BLOCK, "block");
-        FRAME = createObject(c, Element.FRAME, "frame");
+        //FRAME = createObject(c, Element.FRAME, "frame");
         ORE_STONE = createObject(c, Element.ORE_STONE, "ore");
         ORE_DEEPSLATE = createObject(c, Element.ORE_DEEPSLATE, "deepslate_ore");
         RAW_BLOCK = createObject(c, Element.RAW_BLOCK, "raw_block");

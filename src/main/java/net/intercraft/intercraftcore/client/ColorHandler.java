@@ -41,23 +41,6 @@ public class ColorHandler
 
 
     /**
-     * Color item(s) and specify the layer to color.
-     * @param color Color to apply.
-     * @param layers Bit flag for layers to color, -1 for all layers.
-     * @param items Item(s) to color.
-     */
-    public static void colorStaticItem(int color, int layers, Item...items)
-    {
-        for (Item item : items) {
-            if (item != null) {
-                ColorHandler.items.add(item);
-                ColorHandler.colors.add(color);
-                ColorHandler.layers.add(layers);
-            }
-        }
-    }
-
-    /**
      * Color block(s) and specify the layer to color.
      * @param color Color to apply.
      * @param layers Bit flag for layers to color, -1 for all layers.
@@ -65,17 +48,38 @@ public class ColorHandler
      */
     public static void colorStaticBlock(int color, int layers, Block...blocks)
     {
-        for (Block block : blocks) {
-            if (block != null) {
-                ColorHandler.blocks.add(block);
-                ColorHandler.colors.add(color);
-                ColorHandler.layers.add(layers);
+        if (color != 0xffffff) {// Skip if the color is white
+            for (Block block : blocks) {
+                if (block != null) {
+                    ColorHandler.colors.add(color);
+                    ColorHandler.layers.add(layers);
+                    ColorHandler.blocks.add(block);
+                }
             }
         }
     }
 
     /**
-     * Registers color handlers for registered blocks and items.
+     * Color item(s) and specify the layer to color.
+     * @param color Color to apply.
+     * @param layers Bit flag for layers to color, -1 for all layers.
+     * @param items Item(s) to color.
+     */
+    public static void colorStaticItem(int color, int layers, Item...items)
+    {
+        if (color != 0xffffff) {// Skip if the color is white
+            for (Item item : items) {
+                if (item != null) {
+                    ColorHandler.colors.add(color);
+                    ColorHandler.layers.add(layers);
+                    ColorHandler.items.add(item);
+                }
+            }
+        }
+    }
+
+    /**
+     * Registers color providers for registered blocks and items.
      * Needs to happen in the registration order, otherwise colors will get out of
      * sync and will apply the wrong color to the block/item.
      */
@@ -83,7 +87,7 @@ public class ColorHandler
     public static void register()
     {
         if (IntercraftCore.LOGGING)
-            System.out.println("Registering color handlers");
+            System.out.println("Registering color providers");
 
         // Static block colors.
         for (int i=0;i<blocks.size();i++) {
@@ -92,7 +96,6 @@ public class ColorHandler
                     layers.get(i)),
                     blocks.get(i));
         }
-
         if (IntercraftCore.LOGGING)
             System.out.println("[Block Colors] Done");
 
@@ -103,14 +106,13 @@ public class ColorHandler
                     layers.get(blocks.size()+i)),
                     items.get(i));
         }
+        if (IntercraftCore.LOGGING)
+            System.out.println("[Item Colors] Done");
 
         blocks = null;
         items = null;
         colors = null;
         layers = null;
-
-        if (IntercraftCore.LOGGING)
-            System.out.println("[Item Colors] Done");
     }
 
     @Environment(EnvType.CLIENT)

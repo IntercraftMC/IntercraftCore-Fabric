@@ -14,8 +14,8 @@ public class Elements
     private static final short
             ORES = ORE_STONE | ORE_DEEPSLATE | RAW | RAW_BLOCK,// Ores and its produce
             NONSOLID = VIAL_GAS | VIAL_LIQUID,// Solid at room temperature
-            UNSTABLE = GEAR | BLOCK | FRAME | PLATE,// Elements too unstable/unsuited to make components out of due to strength or reactivity
-            OVERLAP_VANILLA = INGOT | NUGGET | BLOCK | ORES;// Vanilla counterparts
+            UNSTABLE = GEAR | BLOCK | PLATE,// Elements too unstable/unsuited to make components out of due to strength or reactivity
+            VANILLA = INGOT | NUGGET | BLOCK | ORES;// Vanilla counterparts
 
     /**
      * Metals
@@ -27,12 +27,12 @@ public class Elements
                     .colorUnrefined(0x996100)
                     .create(),
             COPPER = new ElementFactory("copper", "Cu")
-                    .excludeForms(OVERLAP_VANILLA | NONSOLID)
+                    .excludeForms(VANILLA | NONSOLID)
                     .colorRefined(0xc1834b)
                     .colorUnrefined(0x5e9c59)
                     .create(),
             GOLD = new ElementFactory("gold", "Au")
-                    .excludeForms(OVERLAP_VANILLA | NONSOLID)
+                    .excludeForms(VANILLA | NONSOLID)
                     .colorRefined(0xe7e74c)
                     .colorUnrefined(0xe7e74c)
                     .create(),
@@ -42,7 +42,7 @@ public class Elements
                     .colorUnrefined(0xf0ffd8)
                     .create(),
             IRON = new ElementFactory("iron", "Fe")
-                    .excludeForms(OVERLAP_VANILLA | NONSOLID)
+                    .excludeForms(VANILLA | NONSOLID)
                     .colorRefined(0xe5dddd)
                     .create(),
             LEAD = new ElementFactory("lead", "Pb")
@@ -105,7 +105,7 @@ public class Elements
      */
     public static final Element
             CARBON = new ElementFactory("carbon", "C")
-                    .excludeForms(ORES | VIAL_GAS | GEAR)
+                    .excludeForms(VANILLA | NONSOLID | GEAR)
                     .colorRefined(0x000000)
                     .colorUnrefined(0x000000)
                     .create(),

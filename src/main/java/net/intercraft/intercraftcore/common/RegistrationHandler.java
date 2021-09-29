@@ -32,6 +32,8 @@ public class RegistrationHandler
                 System.out.println("Block didn't have a registry name!");
         }
 
+        BlockEntityTypes.initBlockEntityTypes();
+
         for (BlockItem item : blockItems) {
             if (item instanceof IRegistryName)
                 Registry.register(Registry.ITEM, new Identifier(IntercraftCore.MODID, ((IRegistryName) item).getRegistryName()), item);
